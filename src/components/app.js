@@ -2,12 +2,13 @@ angular.module('video-player')
 
   .component('app', {
     controller: function() {
-      this.selectVideo = function() {
-        
+      this.selectVideo = function(event) {
+        this.currentVideo = event;
       };
       
-      this.searchResults = function() {
-        
+      this.binded = this.selectVideo.bind(this);
+      
+      this.searchResults = function() {  
       };
       
       this.currentVideo = exampleVideoData[0];

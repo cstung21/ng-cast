@@ -1,8 +1,8 @@
 angular.module('video-player')
   .component('videoList', {
     bindings: {
-      videos: '<'
-      
+      videos: '<',
+      clickevent: '<'
     },
     controller: function() {
       

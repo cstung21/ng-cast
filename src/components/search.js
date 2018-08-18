@@ -5,6 +5,8 @@ angular.module('video-player')
       this.result = function() {
         
       };    
+      this.searchbox = '';
+      
     },
     templateUrl: 'src/templates/search.html'
   });
