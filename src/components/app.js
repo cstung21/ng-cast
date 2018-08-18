@@ -1,7 +1,7 @@
 angular.module('video-player')
 
   .component('app', {
-    controller: function() {
+    controller: function($scope, youTube) {
       this.selectVideo = function(event) {
         this.currentVideo = event;
       };
