@@ -2,18 +2,17 @@ angular.module('video-player')
 
   .component('app', {
     controller: function($scope, youTube) {
-      this.selectVideo = function(event) {
+      this.selectVideo = (event) => {
         this.currentVideo = event;
       };
       
-      this.binded = this.selectVideo.bind(this);
-      
-      this.searchResults = function() {  
+      this.searchResults = (data) => {  
+        this.currentVideo = data[0];
+        this.videos = data;
       };
-      
-      this.currentVideo = exampleVideoData[0];
-      this.videos = exampleVideoData;
-    
+      youTube.search('', this.searchResults);
+      this.currentVideo = fakeVideoData[0];
+      this.videos = fakeVideoData;
     },
     templateUrl: 'src/templates/app.html'
   });
